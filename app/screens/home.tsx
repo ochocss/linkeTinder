@@ -7,23 +7,23 @@ export default function Home () {
     return ( // scrollview nao funciona, vou se matar
         <View style={style.container}>
             <AppHeader />
-        <ScrollView style={style.postList}>
-            {/* <View style={style.postList}> */}
-            <FlatList
-                data={USER_POSTS}
-                keyExtractor={(item, index) => 'key'+index}
-                renderItem={({item}) => (
-                    <Post
-                        owner={item.owner}
-                        text={item.text}
-                        img={item.img}
-                        time={item.time}
-                        id={item.id}
-                    />
-                )}>
-            </FlatList>
-            {/* </View> */}
-        </ScrollView>
+            <ScrollView style={style.postList}>
+                {/* <View style={style.postList}> */}
+                <FlatList
+                    data={USER_POSTS}
+                    keyExtractor={(item, index) => 'key'+index}
+                    renderItem={({item}) => (
+                        <Post
+                            ownerId={item.ownerId}
+                            text={item.text}
+                            img={item.img}
+                            time={item.time}
+                            id={item.id}
+                        />
+                    )}>
+                </FlatList>
+                {/* </View> */}
+            </ScrollView>
         </View>
     );
 }

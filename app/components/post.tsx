@@ -1,8 +1,9 @@
+import { USERS } from '@/scripts/data'
 import { View, Image, StyleSheet, Text, Dimensions } from "react-native";
 import { PostContent } from "@/scripts/data";
 import { Link } from "expo-router";
 
-const swapLB = (str: string) =>
+export const swapLB = (str: string) =>
   str.split('\n').map((subStr) => {
     return (
       <>
@@ -12,19 +13,18 @@ const swapLB = (str: string) =>
     );
   });
 
-export default function Post ({owner, text, img, time, id} : PostContent) {
+export default function Post ({ownerId, text, img, time, id} : PostContent) {
     return (
         <View style={style.postBody}>
             <Link href={{
                 pathname: '/user',
                 params: {
-                    pfp: owner.pfp,
-                    name: owner.name
+                    ownerId: ownerId
                 }
             }}>
                 <View style={style.postHeader}>
-                    <Image source={{uri: owner.pfp}} style={style.accountPic} resizeMode="cover"></Image>
-                    <Text style={style.accountName}>{owner.name}</Text>
+                    <Image source={{uri: USERS[ownerId].pfp}} style={style.accountPic} resizeMode="cover"></Image>
+                    <Text style={style.accountName}>{USERS[ownerId].name}</Text>
                     <Text style={style.postTime}>{`${time.getHours()}:${time.getMinutes()}`}</Text>
                 </View>
             </Link>
