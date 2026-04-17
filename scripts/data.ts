@@ -84,9 +84,51 @@ export const USER_POSTS: PostContent[] = [
     },
     {
         ownerId: 1,
-        text: "Excited to announce I’m launching a faith-based, female-led polycule startup! 🚀 Looking for mission-driven partners to join this inclusive community. Please reach out via carrier pigeon to discuss synergy and alignment.\n\n#Networking #FaithInBusiness #InclusiveLeadership #NewVentures",
+        text: "Estou muito animada para anunciar o lançamento de uma startup poliamorosa, liderada por mulheres e com foco na fé! 🚀 Busco parceiras com a mesma missão para se juntarem a essa comunidade inclusiva. Entre em contato por pombo-correio para conversarmos sobre sinergia e alinhamento.\n\n#Networking #FéNosNegócios #LiderançaInclusiva #NovosEmpreendimentos",
         img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.dictionary.com%2Fe%2Fwp-content%2Fuploads%2F2019%2F04%2Fpolycule-2.png&f=1&nofb=1&ipt=f871ea37f2b96e5586a4383806f4d7225aaccfc7bd2ec947260083e2fe955747',
         time: randomDate(10, 20),
         id: uuid.v4()
     },
+    {
+        ownerId: 0,
+        text: "Minha sogra me disse que eu nunca daria certo na vida. Hoje agradeço a ela todos os dias. Foi ouvindo aquela voz crítica que aprendi a amar de verdade — amando quem me desafia. Relacionamento não é sobre conforto, é sobre resiliência e growth mindset. ❤️📈\n\n#ObrigadoSogra #AmorQueCobra",
+        time: randomDate(0, 10),
+        id: uuid.v4(),
+        img: undefined
+    },
+    {
+        ownerId: 1,
+        text: "Semana passada minha mulher chegou com um serrote e disse: 'vamos construir nossa relação do zero'. Ela tava falando literalmente. Construímos um armário juntas. Mas entenda: o amor também se constrói com madeira, fé e paciência. E com força bruta. 🙏🛠️\n\n#AmorLésbicoCarpinteiro #JesusConstroi",
+        time: randomDate(0, 10),
+        id: uuid.v4(),
+        img: undefined
+    },
+    {
+        ownerId: 2,
+        text: "Acabei de aplicar a metodologia Car-Alho de otimização de relacionamentos no meu casamento. Reduzi discussões em 80% e aumentei a eficiência do carinho em 600%. 📊 O segredo? Demiti emocionalmente quem não agregava valor e contratei flores semanais. Amor é gestão pura. 🚗❤️\n\n#CEOdoAmor #CarAlhoCars",
+        time: randomDate(0, 10),
+        id: uuid.v4(),
+        img: undefined
+    },
+    {
+        ownerId: 0,
+        text: "Meu ex terminou comigo por mensagem de texto. Enquanto muitos chorariam, agradeci a oportunidade de aprender sobre desapego ágil. Relacionamento é como startup: se não escalou, pivotar é necessário. Hoje estou aberta a novos investimentos emocionais. 💔🚀\n\n#LoveAgile #Recomeço",
+        time: randomDate(0, 10),
+        id: uuid.v4(),
+        img: undefined
+    },
+    {
+        ownerId: 1,
+        text: "Sabe o que o martelo e o amor têm em comum? Os dois doem quando usados sem direção. Já dizia minha avó pastora: 'quem ama sem prego, constrói só vento'. Por isso hoje eu prego o amor com prego mesmo. E com muito suor e glória a Deus. 🔨🙌\n\n#AmorDeMarceneira #FéQueMovePranchas",
+        time: randomDate(0, 10),
+        id: uuid.v4(),
+        img: undefined
+    },
+    {
+        ownerId: 2,
+        text: "Se o amor fosse um carro da Car-Alho Cars, ele teria bancos de couro, som ambiente e 3 meses de garantia. Mas atenção: relacionamento não é locação, é compra definitiva. Por isso faça um test drive antes de assinar o contrato emocional. ❤️🚙 #LigadoNoAmor #SemDevolução",
+        time: randomDate(0, 10),
+        id: uuid.v4(),
+        img: undefined
+    }
 ];

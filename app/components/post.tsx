@@ -25,12 +25,17 @@ export default function Post ({ownerId, text, img, time, id} : PostContent) {
                 <View style={style.postHeader}>
                     <Image source={{uri: USERS[ownerId].pfp}} style={style.accountPic} resizeMode="cover"></Image>
                     <Text style={style.accountName}>{USERS[ownerId].name}</Text>
-                    <Text style={style.postTime}>{`${time.getHours()}:${time.getMinutes()}`}</Text>
+                    <Text style={style.postTime}>{`${time.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'})}`}</Text>
                 </View>
             </Link>
 
             <Text style={style.text}>{swapLB(text)}</Text>
-            <Image source={{uri: img}} style={style.image}></Image>
+            {
+                img === undefined ?
+                (<></>)
+                :
+                (<Image source={{uri: img}} style={style.image}></Image>)
+            }
         </View>
     );
 }
@@ -58,8 +63,7 @@ const style = StyleSheet.create({
     },
     postTime: {
         fontSize: 12,
-        width: '10%',
-        left: 'auto',
+        maxWidth: '15%',
         right: 0,
         color: 'gray',
         fontWeight: '100'

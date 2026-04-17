@@ -1,12 +1,13 @@
 import LogoWhite from "@/assets/images/logo_white.png";
+import { Link } from "expo-router";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 export default function AppHeader () {
     return (
-        <View style={style.header}>
+        <Link style={style.header} href={{pathname: '/'}}>
             <Image source={LogoWhite} style={style.headerLogo}></Image>
             <Text style={style.headerTitle}>linketinder</Text>
-        </View>
+        </Link>
     );
 }
 
@@ -21,7 +22,7 @@ const style = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: '#0275B4',
         gap: '10px',
-        height: '12vh',
+        height: '10%',
         width: '100%',
         alignItems: 'center',
         padding: '3%'
