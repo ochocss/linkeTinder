@@ -1,21 +1,55 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-import { PostContent } from "../models/user";
+import { PostContent } from "../models/postContent";
 
-export default function Post (content : PostContent) {
+export default function Post ({profilepic, username, text, image} : PostContent) {
     return (
         <View style={style.postBg}>
-            <View></View>
-            <Text>{content.text}</Text>
-            <Image></Image>
+            <View style={style.upperHbox}>
+                <Image source={{uri: profilepic}} style={style.accountPic} resizeMode="cover"></Image>
+                <Text style={style.accountName}>{username}</Text>
+            </View>
+            <Text style={style.text}>{text}</Text>
+            <Image source={{uri: image}} style={style.image}></Image>
         </View>
-    ); // TODO: descobrir como fazer imagem com url, arrumar estilos
+    );
 }
 
 const style = StyleSheet.create({
     postBg: {
-        backgroundColor: "#d6d6d6",
+        backgroundColor: "#e2e1e1",
         margin: "2%",
         padding: "4%",
+        borderRadius: 6,
+        color: "#000000",
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 12
+    },
+
+    upperHbox: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 18,
+    },
+
+    accountName: {
+        fontSize: 24
+    },
+
+    accountPic: {
+        width: 64,
+        height: 64,
+        borderRadius: 100
+    },
+
+    text: {
+        fontSize: 18
+    },
+
+    image: {
+        width: '100%',
+        height: '25vh',
         borderRadius: 6,
     }
 });
