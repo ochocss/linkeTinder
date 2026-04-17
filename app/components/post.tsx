@@ -1,64 +1,86 @@
-import { Image, StyleSheet, Text, View } from "react-native";
-import { PostContent } from "../models/postContent";
+import { View, Image, StyleSheet, Text, Dimensions } from "react-native";
+import { PostContent } from "@/scripts/data";
 import { Link } from "expo-router";
 
-export default function Post ({profilepic, username, text, image} : PostContent) {
+const swapLB = (str: string) =>
+  str.split('\n').map((subStr) => {
     return (
-        <View style={style.postBg}>
-            <Link href={{ // jarvis faça isso funcionar
-                pathname: '/user/',
+      <>
+        {subStr}
+        <br />
+      </>
+    );
+  });
+
+export default function Post ({owner, text, img, time, id} : PostContent) {
+    return (
+        <View style={style.postBody}>
+            <Link href={{
+                pathname: '/user',
                 params: {
-                    profilepic: profilepic,
-                    username: username
+                    pfp: owner.pfp,
+                    name: owner.name
                 }
             }}>
-                <View style={style.upperHbox}>
-                    <Image source={{uri: profilepic}} style={style.accountPic} resizeMode="cover"></Image>
-                    <Text style={style.accountName}>{username}</Text>
+                <View style={style.postHeader}>
+                    <Image source={{uri: owner.pfp}} style={style.accountPic} resizeMode="cover"></Image>
+                    <Text style={style.accountName}>{owner.name}</Text>
+                    <Text style={style.postTime}>{`${time.getHours()}:${time.getMinutes()}`}</Text>
                 </View>
             </Link>
-            <Text style={style.text}>{text}</Text>
-            <Image source={{uri: image}} style={style.image}></Image>
+
+            <Text style={style.text}>{swapLB(text)}</Text>
+            <Image source={{uri: img}} style={style.image}></Image>
         </View>
     );
 }
 
 const style = StyleSheet.create({
-    postBg: {
-        backgroundColor: "#e2e1e1",
-        margin: "2%",
-        padding: "4%",
+    postBody: {
+        backgroundColor: '#e2e1e1',
         borderRadius: 6,
-        color: "#000000",
-        display: 'flex',
+        flex: 1,
         flexDirection: 'column',
-        gap: 12
+        width: '95%',
+        padding: '4%',
+        margin: 'auto',
+        marginBottom: '4%'
     },
-
-    upperHbox: {
-        display: 'flex',
+    postHeader: {
+        marginTop: '2%',
+        height: '5%',
+        width: '100%',
+        flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
         gap: 18,
+        fontWeight: 'bold'
     },
-
-    accountName: {
-        fontSize: 24
+    postTime: {
+        fontSize: 12,
+        width: '10%',
+        left: 'auto',
+        right: 0,
+        color: 'gray',
+        fontWeight: '100'
     },
-
     accountPic: {
-        width: 64,
-        height: 64,
-        borderRadius: 100
+        height: 32,
+        width: 32,
+        borderRadius: '100%',
     },
-
+    accountName: {
+        fontSize: 20
+    },
     text: {
         fontSize: 18
     },
-
     image: {
-        width: '100%',
-        height: '25vh',
+        objectFit: 'fill',
+        overflow: 'hidden',
+        marginTop: '2%',
         borderRadius: 6,
+        width: '100%',
+        height: Dimensions.get('window').height / 4,
     }
 });
