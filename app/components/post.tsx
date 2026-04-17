@@ -1,13 +1,22 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import { PostContent } from "../models/postContent";
+import { Link } from "expo-router";
 
 export default function Post ({profilepic, username, text, image} : PostContent) {
     return (
         <View style={style.postBg}>
-            <View style={style.upperHbox}>
-                <Image source={{uri: profilepic}} style={style.accountPic} resizeMode="cover"></Image>
-                <Text style={style.accountName}>{username}</Text>
-            </View>
+            <Link href={{ // jarvis faça isso funcionar
+                pathname: '/user/',
+                params: {
+                    profilepic: profilepic,
+                    username: username
+                }
+            }}>
+                <View style={style.upperHbox}>
+                    <Image source={{uri: profilepic}} style={style.accountPic} resizeMode="cover"></Image>
+                    <Text style={style.accountName}>{username}</Text>
+                </View>
+            </Link>
             <Text style={style.text}>{text}</Text>
             <Image source={{uri: image}} style={style.image}></Image>
         </View>
