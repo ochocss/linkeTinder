@@ -65,7 +65,7 @@ const style = StyleSheet.create({
         fontSize: 12,
         maxWidth: '15%',
         right: 0,
-        color: 'gray',
+        color: '#383838',
         fontWeight: '100'
     },
     accountPic: {

@@ -49,7 +49,7 @@ export const USER_POSTS: PostContent[] = [
     },
     {
         ownerId: 1,
-        text: "Ano passado me introduzi no mundo da marcenaria, e com isso aprendi várias lições sobre o mundo do trabalho e do romance: \n\n1: quem com ferro fere, com ferro será ferido; \n2: aaaaaaaaaaaaaa",
+        text: "Recentemente, me dediquei à marcenaria, uma jornada que exigiu total foco e comprometimento. Embora esteja incrivelmente orgulhoso do meu trabalho e da disciplina que estou desenvolvendo, também tenho refletido sobre a importância do equilíbrio entre vida pessoal e profissional e sobre as conexões pessoais que às vezes deixamos para trás na busca por nossas paixões. Volta pra mim Ricardo\n#Marcenaria #Foco #MentalidadeDeCrescimento",
         img: "https://dandimadeiras.com.br/wp-content/uploads/2018/09/wood-1318872_960_720.jpg",
         time: randomDate(15, 20),
         id: uuid.v4()
